@@ -3,6 +3,7 @@ directories:
 files:
   - "dist"
   - "index.html"
+  - "assets"
   - "package.json"
   - "README.md"
   - "LICENSE"
