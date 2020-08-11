@@ -1,15 +1,9 @@
-os: linux
-dist: xenial
+os: osx
+osx_image: xcode12
 language: node_js
 node_js:
   - 14
 cache: yarn
-before_install:
-  - sudo dpkg --add-architecture i386
-  - wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
-  - sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
-  - sudo apt update
-  - sudo apt install --install-recommends winehq-stable
 install:
   - yarn --frozen-lockfile
 script: yarn dist

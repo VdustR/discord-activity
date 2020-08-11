@@ -1,6 +1,6 @@
 {
   "name": "discord-activity",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Discord activity manager.",
   "keywords": [
     "discord",
@@ -30,10 +30,10 @@
     "watch:frontend": "rollup -wc rollup.config.frontend.js --environment BUILD:development",
     "watch:backend": "tsc -w --project tsconfig.backend.json --outDir dist",
     "start": "electron .",
-    "build": "yarn clear && run-p build:frontend build:backend && electron-builder build -m pkg mas -w nsis -l AppImage",
+    "build": "yarn clear && run-p build:frontend build:backend && electron-builder build -m dmg pkg -w nsis portable -l AppImage",
     "build:frontend": "rollup -c rollup.config.frontend.js",
     "build:backend": "tsc --project tsconfig.backend.json --outDir dist",
-    "dist": "yarn clear && run-p build:frontend build:backend && electron-builder build -m pkg mas -w nsis -l AppImage -p always",
+    "dist": "yarn clear && run-p build:frontend build:backend && electron-builder build -m dmg pkg -w nsis portable -l AppImage -p always",
     "lint": "eslint \"src/**/*.{ts,tsx}\""
   },
   "main": "dist/main.js",
